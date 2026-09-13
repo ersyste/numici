@@ -2,48 +2,88 @@
 <!-- Statická rozcestníková stránka — generátor tool/gen_legal_site.dart se jí
      NEDOTÝKÁ (píše jen privacy/ a terms/). Když se změní shrnutí v sekci
      „Stručně" / „In short" v lib/src/features/about/legal_texts.dart, uprav
-     ručně i odstavec .meta níže, ať si stránky neodporují. -->
-<html lang="cs">
+     ručně i odstavce .meta níže, ať si stránky neodporují.
+
+     Přepínač jazyka drží sdílený lang.js — obě verze jsou v HTML viditelné,
+     skript tu nevybranou schová. Bez JS se ukážou obě pod sebou. -->
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
-  <title>Numíci: počítání pro děti — právní dokumenty</title>
-  <meta name="description" content="Zásady ochrany osobních údajů a podmínky používání aplikace Numíci: počítání pro děti." />
+  <title>Legal documents — Numici: math for kids</title>
+  <meta name="description" content="Privacy Policy and Terms of Use for the Numici: math for kids Android app." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site">
-    <p class="app">Numíci: počítání pro děti</p>
-    <p class="tag">Právní dokumenty · Legal documents</p>
+    <p class="app">Numici: math for kids</p>
+    <p class="tag">Legal documents · Právní dokumenty</p>
   </header>
 
   <main class="wrap">
-    <h1>Dokumenty / Documents</h1>
-    <p class="meta">Aplikace pro Android. Nesbírá žádné osobní údaje; internet
-      využívá jedině nákup přes Google Play. ·
-      Android app. Collects no personal data; the Google Play purchase is the
-      only feature that uses the internet.</p>
+    <nav class="lang">
+      <span class="langswitch" data-langswitch hidden>
+        <button type="button" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" data-lang="cs" aria-pressed="false">Čeština</button>
+      </span>
+    </nav>
 
-    <div class="home-links">
-      <a class="block" href="privacy/">
-        <div class="t">Zásady ochrany osobních údajů</div>
-        <div class="d">Privacy Policy — co aplikace (ne)sbírá a proč. / What the app does (not) collect.</div>
-      </a>
-      <a class="block" href="terms/">
-        <div class="t">Podmínky používání</div>
-        <div class="d">Terms of Use — odpovědnost rodiče, vyloučení záruk. / Parental responsibility, disclaimers.</div>
-      </a>
-    </div>
+    <section id="en" lang="en" data-lang-doc="en">
+      <h1>Documents</h1>
+      <p class="meta">Android app. Collects no personal data; the Google Play
+        purchase is the only feature that uses the internet.</p>
 
-    <div class="note">
-      Pro Google Play vlož do pole <em>Privacy policy</em> tuto adresu:
-      <code>https://ersyste.github.io/numici/privacy</code>
-    </div>
+      <div class="home-links">
+        <a class="block" href="privacy/">
+          <div class="t">Privacy Policy</div>
+          <div class="d">What the app does — and does not — collect.</div>
+        </a>
+        <a class="block" href="terms/">
+          <div class="t">Terms of Use</div>
+          <div class="d">Parental responsibility, disclaimers.</div>
+        </a>
+      </div>
 
-    <footer>
-      © 2026 Ersyste · Numíci: počítání pro děti
-    </footer>
+      <div class="note">
+        Privacy policy URL for Google Play:
+        <code>https://ersyste.github.io/numici/privacy</code>
+      </div>
+
+      <footer>
+        © 2026 Ersyste · Numici: math for kids
+      </footer>
+    </section>
+
+    <hr class="lang-sep" data-lang-sep />
+
+    <section id="cs" lang="cs" data-lang-doc="cs">
+      <h1>Dokumenty</h1>
+      <p class="meta">Aplikace pro Android. Nesbírá žádné osobní údaje;
+        internet využívá jedině nákup přes Google Play.</p>
+
+      <div class="home-links">
+        <a class="block" href="privacy/#cs">
+          <div class="t">Zásady ochrany osobních údajů</div>
+          <div class="d">Co aplikace (ne)sbírá a proč.</div>
+        </a>
+        <a class="block" href="terms/#cs">
+          <div class="t">Podmínky používání</div>
+          <div class="d">Odpovědnost rodiče, vyloučení záruk.</div>
+        </a>
+      </div>
+
+      <div class="note">
+        Pro Google Play vlož do pole <em>Privacy policy</em> tuto adresu:
+        <code>https://ersyste.github.io/numici/privacy</code>
+      </div>
+
+      <footer>
+        © 2026 Ersyste · Numíci: počítání pro děti
+      </footer>
+    </section>
   </main>
+
+  <script src="lang.js"></script>
 </body>
 </html>
